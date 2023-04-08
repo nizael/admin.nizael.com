@@ -1,0 +1,33 @@
+:root {
+  --radius-sm: .5rem;
+  --radius-xs: .25rem;
+
+  --padding-sm: .5rem;
+  --padding-xs: .25rem;
+  --padding-md: .75rem;
+  --padding-lg: 1rem;
+
+  --gap-xs: .25rem;
+  --gap-sm: .5rem;
+  --gap-md: .75rem;
+  --gap-lg: 1rem;
+  --gap-xl: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  color: inherit;
+  background: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
