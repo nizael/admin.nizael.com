@@ -3,7 +3,6 @@
   background-color: #fef8edff;
   display: grid;
   grid-template-columns: 240px 1fr;
-
 }
 
 .sidebar {
@@ -44,4 +43,24 @@
 
 .person span {
   color: gray;
+}
+
+.sidemenu {
+  width: 100%;
+}
+
+.item {
+  height: 56px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #9da4b0ff;
+  padding: var(--padding-lg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.item:hover {
+  color: #091B3D;
+  background-color: #fef8edff;
 }

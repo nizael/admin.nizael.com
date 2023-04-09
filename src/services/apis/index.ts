@@ -4,7 +4,10 @@ import { parseCookies, setCookie, destroyCookie } from 'nookies'
 const apis = axios.create({
   baseURL: 'http://localhost:3003',
   timeout: 1000,
-  headers: { 'X-Custom-Header': 'foobar' }
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${parseCookies()['token']}`
+  }
 });
 
 interface Login {
@@ -22,26 +25,26 @@ export function apisFetch() {
         'token',
         response.data.token,
         {
+          // maxAge: 60 * 60 * 24, // 1 dias
+          path: '/',
+        })
+      setCookie(
+        {},
+        'user',
+        response.data.user,
+        {
           maxAge: 60 * 60 * 24, // 1 dias
           path: '/',
         })
-        setCookie(
-          {},
-          'user',
-          response.data.user,
-          {
-            maxAge: 60 * 60 * 24, // 1 dias
-            path: '/',
-          })
 
-          setCookie(
-            {},
-            'role',
-            response.data.role,
-            {
-              maxAge: 60 * 60 * 24, // 1 dias
-              path: '/',
-            })
+      setCookie(
+        {},
+        'role',
+        response.data.role,
+        {
+          maxAge: 60 * 60 * 24, // 1 dias
+          path: '/',
+        })
 
       return response.data
     },
