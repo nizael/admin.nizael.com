@@ -1,3 +1,4 @@
+import { useProductStore } from '@components/templates/products/store/useProductStore';
 import axios, { AxiosError } from 'axios';
 import { parseCookies, setCookie, destroyCookie } from 'nookies'
 
@@ -6,7 +7,7 @@ const apis = axios.create({
   timeout: 1000,
   headers: {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${parseCookies()['token']}`
+    authorization: `Bearer ${parseCookies()['token']}`
   }
 });
 
@@ -19,7 +20,6 @@ export function apisFetch() {
   return {
     async login(data: Login) {
       const response = await apis.post('/sessions/create', data);
-      console.log(response.data)
       setCookie(
         {},
         'token',
@@ -48,6 +48,11 @@ export function apisFetch() {
 
       return response.data
     },
+
+    async listAll() {
+      const response = await apis.get('/products/list-all')
+      return response.data
+    }
   }
 }
 
