@@ -1,6 +1,6 @@
 import { Login } from "@components/templates/login";
 
-export default function Home() {
+export default function LoginPage() {
   return (
     <Login />
   )

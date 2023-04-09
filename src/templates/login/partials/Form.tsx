@@ -18,7 +18,7 @@ export const Form = () => {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const auth = await login(values)
-    if (auth) {
+    if (auth.token) {
       redirect('/')
     }
 

@@ -1,6 +1,8 @@
 :root {
-  --radius-sm: .5rem;
   --radius-xs: .25rem;
+  --radius-sm: .5rem;
+  --radius-md: .75rem;
+  --radius-lg: 1rem;
 
   --padding-sm: .5rem;
   --padding-xs: .25rem;

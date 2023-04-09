@@ -1,7 +1,7 @@
-import { Login } from '@components/templates/login'
+import { Home } from "@components/templates/home";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <Login />
+    <Home />
   )
 }

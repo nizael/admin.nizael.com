@@ -16,14 +16,33 @@ export function apisFetch() {
   return {
     async login(data: Login) {
       const response = await apis.post('/sessions/create', data);
+      console.log(response.data)
       setCookie(
         {},
-        'userToken',
+        'token',
         response.data.token,
         {
           maxAge: 60 * 60 * 24, // 1 dias
           path: '/',
         })
+        setCookie(
+          {},
+          'user',
+          response.data.user,
+          {
+            maxAge: 60 * 60 * 24, // 1 dias
+            path: '/',
+          })
+
+          setCookie(
+            {},
+            'role',
+            response.data.role,
+            {
+              maxAge: 60 * 60 * 24, // 1 dias
+              path: '/',
+            })
+
       return response.data
     },
   }
